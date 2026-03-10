@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# ITZFIZZ — Scroll-Driven Hero Animation (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A scroll-driven hero section animation built with React + Vite + GSAP.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+```
+src/
+├── components/
+│   ├── Navbar.jsx        # Fixed top navigation
+│   ├── HeroSection.jsx   # Hero with headline, stats, car visual
+│   ├── ScrollSection.jsx # 300vh scroll-driven animation section
+│   ├── AboutSection.jsx  # Features / about section
+│   └── CarSVG.jsx        # Inline SVG sports car component
+├── hooks/
+│   └── useAnimations.js  # All GSAP logic (intro + scroll timelines)
+├── styles/
+│   └── globals.css       # All CSS variables and styles
+├── App.jsx               # Root component
+└── main.jsx              # React entry point
+```
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+npm run dev
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Build for Production
 
-### `npm test`
+```bash
+npm run build
+npm run preview
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deploy to GitHub Pages
 
-### `npm run build`
+1. Add `base` to `vite.config.js`:
+   ```js
+   export default defineConfig({ base: '/your-repo-name/', plugins: [react()] })
+   ```
+2. Install gh-pages: `npm install --save-dev gh-pages`
+3. Add to `package.json` scripts:
+   ```json
+   "deploy": "npm run build && gh-pages -d dist"
+   ```
+4. Run: `npm run deploy`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React 18** with Vite
+- **GSAP 3** + ScrollTrigger for all animations
+- **Vanilla CSS** with CSS custom properties (no Tailwind needed for this project)
