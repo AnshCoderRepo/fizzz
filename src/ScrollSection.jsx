@@ -20,7 +20,7 @@ const ScrollSection = () => (
 
         {/* Scroll car */}
         <div className="visual-container" id="scrollCar"
-          style={{ position: 'absolute', right: '-5%', top: '50%', transform: 'translateY(-50%)', width: '55%' }}>
+          style={{ position: 'absolute', left: '-60%', top: '50%', transform: 'translateY(-50%)', width: '55%' }}>
           <div className="car-svg-wrapper">
             <div className="speed-lines" id="scrollSpeedLines" style={{ opacity: 0 }}>
               {[...Array(6)].map((_, i) => (

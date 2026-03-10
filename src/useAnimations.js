@@ -83,7 +83,7 @@ const useAnimations = () => {
       });
 
       // ── SCROLL CAR INITIAL STATE ──
-      gsap.set('#scrollCar', { opacity: 0, x: 200 });
+      gsap.set('#scrollCar', { opacity: 0, x: '-20vw' });
 
       // ── SCROLL SECTION TIMELINE ──
       const scrollTl = gsap.timeline({
@@ -98,20 +98,20 @@ const useAnimations = () => {
       scrollTl
         .to('#hero .hero-content', { opacity: 0, y: -50, duration: 0.3, immediateRender: false }, 0)
         .to('#hero #carVisual', { opacity: 0, x: 150, duration: 0.3, immediateRender: false }, 0)
-        .to('#scrollCar', { opacity: 1, x: 0, duration: 0.5 }, 0.1)
+        .to('#scrollCar', { opacity: 1, x: '50vw', duration: 0.5 }, 0.1) // Bring car into left view
         .to('#scrollSpeedLines', { opacity: 1, duration: 0.3 }, 0.3)
         .to('#scrollSpeedLines .speed-line', {
           scaleX: 1, stagger: 0.05, duration: 0.3, transformOrigin: 'right',
         }, 0.3)
         .to('#scrollPhase1', { opacity: 1, x: 0, duration: 0.4 }, 0.2)
-        .to('#scrollCar', { x: '-10vw', duration: 0.8, ease: 'none' }, 0.3)
+        .to('#scrollCar', { x: '80vw', duration: 0.8, ease: 'none' }, 0.3) // Slowly creep forward across screen
         .to('#scrollCarSvg', { scaleX: 1.1, duration: 0.5, ease: 'power1.inOut' }, 0.35)
         .to('#scrollCarSvg', { scaleX: 1, duration: 0.5, ease: 'power1.inOut' }, 0.65)
         .to('#scrollPhase1', { opacity: 0, x: -50, duration: 0.3 }, 0.6)
         .to('#scrollPhase2', { opacity: 1, x: 0, duration: 0.4 }, 0.65)
-        .to('#scrollCar', { x: '150vw', duration: 1, ease: 'none' }, 0.7)
+        .to('#scrollCar', { x: '200vw', duration: 1, ease: 'none' }, 0.7) // Accelerate entirely off screen right
         .to('#scrollSpeedLines .speed-line', {
-          scaleX: 2.5, stagger: 0.03, duration: 0.4, transformOrigin: 'right',
+          scaleX: 2.5, stagger: 0.03, duration: 0.4, transformOrigin: 'left',
         }, 0.7)
         .to(['#scrollPhase2'], { opacity: 0, duration: 0.3 }, 1.5);
 
